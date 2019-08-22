@@ -10,7 +10,7 @@ public class PrimeNumberTest {
     public void when5() {
         PrimeNumber prime = new PrimeNumber();
         int count = prime.calc(5);
-        assertThat(count, is(2));
+        assertThat(count, is(3));
     }
 
     @Test
@@ -25,5 +25,13 @@ public class PrimeNumberTest {
         PrimeNumber prime = new PrimeNumber();
         int count = prime.calc(2);
         assertThat(count, is(1));
+    }
+
+    @Test
+    public void when10() {
+        PrimeNumber prime = new PrimeNumber();
+        int count = prime.calc(10);
+        assertThat(count, is(4));
+
     }
 }
