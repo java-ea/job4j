@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+
 /**
  * FindLoopTest.
  *
@@ -34,12 +35,26 @@ public class FindLoopTest {
     }
 
     @Test
-    public void whenArrayHas2Then3() {
+    public void whenArrayHas2From2To5Then3() {
         FindLoop find = new FindLoop();
-        int[] input = new int[]{5, 10, 3, 2};
+        int[] input = new int[]{5, 10, 3, 2, 1, 6};
         int value = 2;
-        int result = find.indexOf(input, value);
+        int start = 2;
+        int finish = 5;
+        int result = find.indexOf(input, value, start, finish);
         int expect = 3;
         assertThat(result, is(expect));
     }
+    @Test
+    public void whenArrayHasNot2From2To5ThenMinus1() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[]{5, 2, 3, 10, 1, 6};
+        int value = 2;
+        int start = 2;
+        int finish = 5;
+        int result = find.indexOf(input, value, start, finish);
+        int expect = -1;
+        assertThat(result, is(expect));
+    }
+
 }
