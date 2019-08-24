@@ -4,8 +4,8 @@ package ru.job4j.array;
  * ArrayChar Обертка над строкой.
  *
  * @author Pavlo Stefiniv (stefiniv4w@gmail.com)
- * @version 0.1
- * @since 23.08.2019
+ * @version 0.2
+ * @since 24.08.2019
  */
 public class ArrayChar {
     /**
@@ -17,11 +17,14 @@ public class ArrayChar {
      * @return если слово начинаеться с префикса return true.
      */
     public boolean startsWith(String word, String prefix) {
-        boolean result = false;
+        boolean result = true;
         char[] pref = prefix.toCharArray();
         char[] wrd = word.toCharArray();
-        if (word.startsWith(prefix)) {
-            result = true;
+        for (int i = 0; i <= pref.length-1; i++) {
+            if (pref[i] != wrd[i]) {
+                result = false;
+                break;
+            }
         }
         return result;
     }
