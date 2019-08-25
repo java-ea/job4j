@@ -1,8 +1,10 @@
 package ru.job4j.array;
 
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+
 /**
  * MatrixCheckTest.
  *
@@ -14,7 +16,7 @@ public class MatrixCheckTest {
     @Test
     public void whenDataMonoByTrueThenTrue() {
         MatrixCheck check = new MatrixCheck();
-        boolean[][] input = new boolean[][] {
+        boolean[][] input = new boolean[][]{
                 {true, true, true},
                 {false, true, true},
                 {true, false, true}
@@ -26,7 +28,7 @@ public class MatrixCheckTest {
     @Test
     public void whenDataNotMonoByTrueThenFalse() {
         MatrixCheck check = new MatrixCheck();
-        boolean[][] input = new boolean[][] {
+        boolean[][] input = new boolean[][]{
                 {true, true, false},
                 {false, false, true},
                 {true, false, true}
@@ -34,10 +36,11 @@ public class MatrixCheckTest {
         boolean result = check.mono(input);
         assertThat(result, is(false));
     }
+
     @Test
     public void when1DiagFalse2TrueThenFalse() {
         MatrixCheck check = new MatrixCheck();
-        boolean[][] input = new boolean[][] {
+        boolean[][] input = new boolean[][]{
                 {false, true, false},
                 {false, false, true},
                 {false, false, true}
@@ -45,10 +48,11 @@ public class MatrixCheckTest {
         boolean result = check.mono(input);
         assertThat(result, is(false));
     }
+
     @Test
     public void when1DiagTrue2False() {
         MatrixCheck check = new MatrixCheck();
-        boolean[][] input = new boolean[][] {
+        boolean[][] input = new boolean[][]{
                 {true, true, false},
                 {false, true, true},
                 {true, false, true}

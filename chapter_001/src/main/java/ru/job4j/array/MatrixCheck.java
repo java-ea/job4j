@@ -1,4 +1,5 @@
 package ru.job4j.array;
+
 /**
  * MatrixCheck.
  *
@@ -29,8 +30,8 @@ public class MatrixCheck {
              * проверка по 2 диагонали
              */
             int q = data.length - 1 - i;
-            if(data[q][i]!=data[q-1][i+1]){
-                result=false;
+            if (data[q][i] != data[q - 1][i + 1]) {
+                result = false;
                 break;
             }
         }
