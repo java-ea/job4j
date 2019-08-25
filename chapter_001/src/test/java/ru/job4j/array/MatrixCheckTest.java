@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
  * MatrixCheckTest.
  *
  * @author Pavlo Stefiniv (stefiniv4w@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 24.08.2019
  */
 public class MatrixCheckTest {
