@@ -25,7 +25,7 @@ public class Triangle {
      * @param a Длина от точки a b.
      * @param b Длина от точки a c.
      * @param c Длина от точки b c.
-     * @return
+     * @return true если можно пострить треугольник.
      */
     private boolean exist(double a, double c, double b) {
         return a + b > c && a + c > b && b + c > a;
@@ -50,7 +50,7 @@ public class Triangle {
         double p = period(a, b, c);
         if (this.exist(a, b, c)) {
             // формула для расчета площади треугольника.
-            rsl = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
         return rsl;
     }

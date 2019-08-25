@@ -1,8 +1,10 @@
 package ru.job4j.array;
 
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+
 /**
  * ArrayCharTest.
  *
@@ -24,8 +26,9 @@ public class ArrayCharTest {
         boolean result = word.startsWith("Hello", "Hi");
         assertThat(result, is(false));
     }
+
     @Test
-    public void WhenPrefixIsWordThenTrue() {
+    public void whenPrefixIsWordThenTrue() {
         ArrayChar word = new ArrayChar();
         boolean result = word.startsWith("Hello", "Hello");
         assertThat(result, is(true));

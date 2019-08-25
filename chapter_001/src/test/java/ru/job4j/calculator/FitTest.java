@@ -12,11 +12,12 @@ public class FitTest {
         double out = Fit.manWeight(is);
         Assert.assertEquals(expected, out, 0.1);
     }
+
     @Test
-    public void womanWeight(){
-        double is =170;
-        double expected =63;
+    public void womanWeight() {
+        double is = 170;
+        double expected = 63;
         double out = Fit.womanWeight(is);
-        Assert.assertEquals(expected, out,0.1);
+        Assert.assertEquals(expected, out, 0.1);
     }
 }

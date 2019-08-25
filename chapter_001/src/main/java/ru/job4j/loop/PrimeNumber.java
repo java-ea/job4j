@@ -7,11 +7,13 @@ public class PrimeNumber {
         for (int i = 2; i <= finish; i++) {
             prime = 0;
             for (int j = 1; j <= i; j++) {
-                if (i % j == 0)
+                if (i % j == 0) {
                     prime++;
+                }
             }
-            if (prime <= 2)
+            if (prime <= 2) {
                 count++;
+            }
         }
         return count;
     }
