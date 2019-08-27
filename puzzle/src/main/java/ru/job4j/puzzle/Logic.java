@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Logic.
  *
  * @author Pavlo Stefiniv (stefiniv4w@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 26.08.2019
  */
 public class Logic {
@@ -72,19 +72,18 @@ public class Logic {
         int[][] table = this.convert();
         boolean result = false;
         for (int i = 0; i < table.length; i++) {
-            int horizotal = 0;
+            int horizontal = 0;
             int vertical = 0;
             for (int j = 0; j < table.length; j++) {
                 if (table[i][j] == 1) {
-                    horizotal++;
+                    horizontal++;
                 }
                 if (table[j][i] == 1) {
                     vertical++;
                 }
-                if (horizotal == table.length || vertical == table.length) {
-                    result = true;
-                }
-
+            }
+            if (horizontal == table.length || vertical == table.length) {
+                result = true;
             }
 
         }
