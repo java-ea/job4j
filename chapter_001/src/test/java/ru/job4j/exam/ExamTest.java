@@ -26,10 +26,10 @@ public class ExamTest {
     @Test
     public void whenMarge2Arrays2() {
         Exam exam = new Exam();
-        int[] first = new int[]{1, 3, 6, 8};
-        int[] second = new int[]{2, 4, 5, 7};
+        int[] first = new int[]{1, 2, 3, 4, 9};
+        int[] second = new int[]{5, 6, 7, 8, 10};
         int[] result = exam.merge(first, second);
-        int[] expected = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
+        int[] expected = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         assertThat(result, is(expected));
     }
 
