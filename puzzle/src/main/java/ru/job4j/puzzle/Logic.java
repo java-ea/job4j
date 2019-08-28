@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Logic.
  *
  * @author Pavlo Stefiniv (stefiniv4w@gmail.com)
- * @version 0.2
+ * @version 0.3
  * @since 26.08.2019
  */
 public class Logic {
@@ -81,9 +81,13 @@ public class Logic {
                 if (table[j][i] == 1) {
                     vertical++;
                 }
+                if (horizontal != j + 1 && vertical != j + 1) {
+                    break;
+                }
             }
             if (horizontal == table.length || vertical == table.length) {
                 result = true;
+                break;
             }
 
         }
