@@ -11,8 +11,8 @@ public class Exam {
     /**
      * merge - объеденяет два отсортированых массива.
      *
-     * @param left
-     * @param right
+     * @param left первый массив.
+     * @param right второй массив.
      * @return массив, который появится после слияния.
      */
     int[] merge(int[] left, int[] right) {
@@ -20,7 +20,7 @@ public class Exam {
         int r = 0;
         int l = 0;
         for (int res = 0; res < result.length; res++) {
-            if (r < right.length && l < left.length) {
+            if (r < right.length && r < left.length) {
                 if (right[r] < left[l]) {
                     result[res] = right[r];
                     r++;

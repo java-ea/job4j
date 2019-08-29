@@ -12,23 +12,23 @@ public class EndsWith {
 
     /**
      * endsWith.
-     * Проверяет. что слово начинается с префикса.
+     * Проверяет, что слово за слово заканчиваеться на...
      *
      * @param post префикс.
      * @param word слово.
-     * @return result true, если слово начинаеться с префикса.
+     * @return result true, если слово заканчиваеться на...
      */
     public boolean endsWith(String word, String post) {
         boolean result = true;
         char[] pst = post.toCharArray();
         char[] wrd = word.toCharArray();
-        int j = wrd.length - 1;
+        int last = wrd.length - 1;
         for (int i = pst.length - 1; i >= 0; i--) {
-            if (wrd[j] != pst[i]) {
+            if (wrd[last] != pst[i]) {
                 result = false;
                 break;
             }
-            j--;
+            last--;
         }
         return result;
     }
