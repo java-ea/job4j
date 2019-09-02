@@ -10,11 +10,14 @@ public class TriangleTest {
     @Test
     public void whenAreaSetThreePointsThenTriangleArea() {
         // Создаем объект треугольник.
-        Triangle triangle = new Triangle();
+        Point first = new Point(0, 0);
+        Point second = new Point(0, 3);
+        Point third = new Point(3, 0);
+        Triangle triangle = new Triangle(first, second, third);
         // Вычисляем площадь.
-        double result = triangle.area(0, 0, 0, 2, 2, 0);
+        double result = triangle.area();
         // Задаем ожидаемый результат.
-        double expected = 2D;
+        double expected = 4.5;
         //Проверяем результат и ожидаемое значение.
         assertThat(result, closeTo(expected, 0.1));
     }
