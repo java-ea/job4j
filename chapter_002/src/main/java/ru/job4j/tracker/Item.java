@@ -1,4 +1,5 @@
 package ru.job4j.tracker;
+
 /**
  * Заявки Item.
  *
@@ -28,5 +29,11 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "им'я: " + name
+                + "\nid: " + id;
     }
 }
