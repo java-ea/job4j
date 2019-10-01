@@ -33,7 +33,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "им'я: " + name
+        return "name : " + name
                 + "\nid: " + id;
     }
 }

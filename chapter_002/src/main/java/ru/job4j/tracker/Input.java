@@ -8,5 +8,6 @@ package ru.job4j.tracker;
  * @since 15.09.2019
  */
 public interface Input {
-    String ask(String question);
+    String askStr(String question);
+    int askInt(String question);
 }
