@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 public class StubAction implements UserAction {
     boolean call = false;
+
     @Override
     public String name() {
         return "Stub action";
@@ -9,10 +10,11 @@ public class StubAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        call=true;
+        call = true;
         return false;
     }
-    public boolean isCall(){
+
+    public boolean isCall() {
         return call;
     }
 }
