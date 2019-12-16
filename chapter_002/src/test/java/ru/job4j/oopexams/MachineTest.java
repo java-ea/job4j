@@ -1,4 +1,4 @@
-package ru.job4j.oopExams;
+package ru.job4j.oopexams;
 
 import org.junit.Test;
 
