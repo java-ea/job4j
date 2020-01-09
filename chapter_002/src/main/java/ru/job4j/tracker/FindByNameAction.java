@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class FindByNameAction extends BaseAction {
     public FindByNameAction(String name) {
@@ -11,10 +11,10 @@ public class FindByNameAction extends BaseAction {
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("=== Application search ===");
         String name = input.askStr("Enter Name: ");
-        Item[] tmp = tracker.findByName(name);
+        ArrayList<Item> tmp = tracker.findByName(name);
         if (tmp != null) {
             System.out.println("Application found.");
-            System.out.println(Arrays.toString(tmp));
+            System.out.println(tmp);
         } else {
             System.out.println("Application not found.");
         }

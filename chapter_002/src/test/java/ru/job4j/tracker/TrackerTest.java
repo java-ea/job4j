@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -52,7 +54,7 @@ public class TrackerTest {
         // Удаляем заявку.
         tracker.delete(second.getId());
         // Проверяем что заявки номер 2 нет.
-        Item[] items = tracker.findAll();
+        ArrayList<Item> items = tracker.findAll();
         boolean result = true;
         for (Item item : items) {
             if (item.getId().equals(second.getId())) {
@@ -72,7 +74,9 @@ public class TrackerTest {
         tracker.add(first);
         tracker.add(second);
         tracker.add(third);
-        assertThat(tracker.findByName("test2"), is(new Item[]{second}));
+        ArrayList<Item> result = new ArrayList<Item>();
+        result.add(second);
+        assertThat(tracker.findByName("test2"), is(result));
     }
 
     @Test
@@ -96,6 +100,10 @@ public class TrackerTest {
         tracker.add(first);
         tracker.add(second);
         tracker.add(third);
-        assertThat(tracker.findAll(), is(new Item[]{first, second, third}));
+        ArrayList<Item> result = new ArrayList<Item>();
+        result.add(first);
+        result.add(second);
+        result.add(third);
+        assertThat(tracker.findAll(), is(result));
     }
 }

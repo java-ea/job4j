@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
+
 /**
  * Робота с пользователем.
  *
@@ -15,12 +17,12 @@ public class StartUI {
      * @param tracker хранилище заявок.
      * @param actions масив команд.
      */
-    public void init(Input input, Tracker tracker, UserAction[] actions) {
+    public void init(Input input, Tracker tracker, ArrayList<UserAction> actions) {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
-            int select = input.askInt("Select: ", actions.length);
-            UserAction action = actions[select];
+            int select = input.askInt("Select: ", actions.size());
+            UserAction action = actions.get(select);
             run = action.execute(input, tracker);
         }
     }
@@ -30,10 +32,12 @@ public class StartUI {
      *
      * @param actions масив команд.
      */
-    private void showMenu(UserAction[] actions) {
+    private void showMenu(ArrayList<UserAction> actions) {
         System.out.println("Menu.");
-        for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+        int index = 0;
+        for (UserAction action : actions) {
+            System.out.println(index + ". " + action.name());
+            index++;
         }
     }
 
@@ -41,16 +45,14 @@ public class StartUI {
         Input input = new ConsoleInput();
         Input validate = new ValidateInput(input);
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new CreateAction("Create a new Item "),
-                new ShowAllAction("Show all items "),
-                new EditAction("Edit item "),
-                new DeleteAction("Delete item "),
-                new FindByIdAction("Find item by Id"),
-                new FindByNameAction("Find item by Name"),
-                new ExitAction("Exit")
-
-        };
+        ArrayList<UserAction> actions = new ArrayList<UserAction>();
+        actions.add(new CreateAction("Create a new Item "));
+        actions.add(new ShowAllAction("Show all items "));
+        actions.add(new EditAction("Edit item "));
+        actions.add(new DeleteAction("Delete item "));
+        actions.add(new FindByIdAction("Find item by Id"));
+        actions.add(new FindByNameAction("Find item by Name"));
+        actions.add(new ExitAction("Exit"));
         new StartUI().init(validate, tracker, actions);
     }
 }
